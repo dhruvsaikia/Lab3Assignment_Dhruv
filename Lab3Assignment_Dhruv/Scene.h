@@ -3,6 +3,7 @@
 #include <list>
 #include <string>
 #include "Entity.h"
+#include "json.hpp" 
 
 class Scene
 {
@@ -18,7 +19,7 @@ public:
     void Initialize();
     void Destroy();
     void Update();
-    void Load(const JSON& json);
+    void Load(const json::JSON& json); 
 
     Entity* CreateEntity();
     void RemoveEntity(Entity* _entity);

@@ -1,6 +1,7 @@
 #pragma once
 
 #include <string>
+#include "json.hpp" 
 
 #define DECLARE_CLASS(className) static Object* Create() { return new className(); }
 
@@ -19,7 +20,7 @@ public:
     virtual void Initialize() = 0;
     virtual void Destroy() {};
 
-    void Load(const JSON& json); 
+    virtual void Load(const json::JSON& json);
 
     bool IsInitialize() const { return initialized; }
     const std::string& GetName() const { return name; }

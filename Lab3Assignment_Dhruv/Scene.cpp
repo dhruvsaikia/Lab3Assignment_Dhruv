@@ -14,6 +14,11 @@ void Scene::Initialize()
 
 void Scene::Destroy()
 {
+    for (auto& entity : entities)
+    {
+        delete entity;
+    }
+    entities.clear();
 }
 
 void Scene::Update()
@@ -24,13 +29,13 @@ void Scene::Update()
     }
 }
 
-void Scene::Load(const JSON& json)
+void Scene::Load(const json::JSON& json)
 {
 }
 
 Entity* Scene::CreateEntity()
 {
-    Entity* newEntity = new Entity(); 
+    Entity* newEntity = new Entity();
     entities.push_back(newEntity);
     return newEntity;
 }

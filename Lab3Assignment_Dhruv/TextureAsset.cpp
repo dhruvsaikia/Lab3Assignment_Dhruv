@@ -8,6 +8,6 @@ TextureAsset::~TextureAsset()
 {
 }
 
-void TextureAsset::Load(const JSON& json)
+void TextureAsset::Load(const json::JSON& json)
 {
 }

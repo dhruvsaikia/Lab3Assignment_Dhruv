@@ -11,6 +11,6 @@ Object::~Object()
     std::cout << "Object is Destroyed" << std::endl;
 }
 
-void Object::Load(const JSON& json)
+void Object::Load(const json::JSON& json)
 {
 }

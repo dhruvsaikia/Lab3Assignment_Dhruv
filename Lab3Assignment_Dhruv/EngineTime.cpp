@@ -1,10 +1,18 @@
 #include "EngineTime.h"
 
+Time::Time()
+{
+}
+
+Time::~Time()
+{
+}
+
 void Time::Update()
 {
     auto now = std::chrono::system_clock::now();
 
-    if (frameCount == 0) 
+    if (frameCount == 0)
         beginTime = now;
 
     endTime = now;

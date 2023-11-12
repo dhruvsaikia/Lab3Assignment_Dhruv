@@ -2,6 +2,7 @@
 
 #include "Object.h"
 #include "Component.h"
+#include "json.hpp"  
 #include <list>
 #include <string>
 
@@ -20,6 +21,6 @@ public:
 
     void AddComponent(Component* _component);
     void RemoveComponent(Component* _component);
-    void Load(const JSON& json); 
-    Component* CreateComponent(const std::string& componentType); 
+    void Load(const json::JSON& json) override;
+    Component* CreateComponent(const std::string& componentType);
 };

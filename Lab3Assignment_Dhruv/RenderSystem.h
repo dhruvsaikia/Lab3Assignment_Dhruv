@@ -3,15 +3,22 @@
 #include <string>
 #include <list>
 #include "IRenderable.h"
+#include "json.hpp" 
+#include "SDL.h"
 
 class RenderSystem
 {
+
+    //added default values here to be safe and then overwrote them with the json files
 private:
     std::string name = "Game";
-    unsigned int width = 1280;
+    unsigned int width = 1240;
     unsigned int height = 720;
     bool fullScreen = false;
+
     std::list<IRenderable*> renderables;
+    SDL_Window* window = nullptr;
+    SDL_Renderer* renderer = nullptr;
 
 public:
     static RenderSystem& Instance()
@@ -26,7 +33,7 @@ public:
     void Initialize();
     void Update();
     void Destroy();
-    void Load();
+    void Load(const json::JSON& json); 
 
 private:
     RenderSystem() = default;
