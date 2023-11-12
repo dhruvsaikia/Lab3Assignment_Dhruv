@@ -8,13 +8,10 @@ Sprite::~Sprite()
 {
 }
 
-const std::string& Sprite::GetComponentType()
+void Sprite::Load(const JSON& json)
 {
-	static std::string _spriteClass = "Sprite";
-	return _spriteClass;
 }
 
 void Sprite::Render()
 {
-	// RENDER CODE HERE
 }

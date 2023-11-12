@@ -9,13 +9,13 @@
 class Sprite : public Component, IRenderable
 {
 public:
-	Sprite();
-	~Sprite();
+    Sprite();
+    ~Sprite();
 
-	const std::string& GetComponentType() override;
+    void Load(const JSON& json) override; 
 
 protected:
-	void Render() override;
+    void Render() override;
 };
 
 #endif
