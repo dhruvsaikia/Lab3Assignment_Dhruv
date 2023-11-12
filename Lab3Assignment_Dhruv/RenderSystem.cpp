@@ -58,7 +58,7 @@ void RenderSystem::Update()
     SDL_RenderPresent(renderer);
 }
 
-void RenderSystem::Load(const json::JSON& json)
+void RenderSystem::Load(const json::JSON& json) // i had added some checks and outputs to make sure i was getting the json load right
 {
     auto& modifiableJson = const_cast<json::JSON&>(json);
 
