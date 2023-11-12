@@ -31,6 +31,27 @@ void Scene::Update()
 
 void Scene::Load(const json::JSON& json)
 {
+    auto& modifiableJson = const_cast<json::JSON&>(json); 
+
+    if (modifiableJson.hasKey("name")) {
+        name = modifiableJson["name"].ToString();
+        std::cout << "Scene Name: " << name << std::endl;
+    }
+    if (modifiableJson.hasKey("id")) {
+        id = modifiableJson["id"].ToInt();
+        std::cout << "Scene ID: " << id << std::endl;
+    }
+    if (modifiableJson.hasKey("entities")) {
+        auto entitiesArray = modifiableJson["entities"].ArrayRange();
+        for (auto& entityData : entitiesArray) {
+            if (entityData.hasKey("name")) {
+                std::string entityName = entityData["name"].ToString();
+                std::cout << "Entity Name: " << entityName << std::endl;
+            }
+            Entity* newEntity = CreateEntity();
+            newEntity->Load(entityData);  
+        }
+    }
 }
 
 Entity* Scene::CreateEntity()

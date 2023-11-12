@@ -19,9 +19,11 @@ public:
     void Initialize();
     void Destroy();
     void Update();
-    void Load(const json::JSON& json); 
+    void Load(const json::JSON& json);
 
     Entity* CreateEntity();
     void RemoveEntity(Entity* _entity);
     Entity* FindEntityById(int id);
+    const std::string& GetName() const { return name; }
+    int GetID() const { return id; } 
 };

@@ -31,7 +31,15 @@ void SceneManager::RemoveEntity(Entity* entity)
 
 void SceneManager::SetActiveScene(int id)
 {
+    for (auto* scene : scenes) {
+        if (scene->GetID() == id) {
+            activeScene = scene;
+            std::cout << "Active scene set to ID: " << id << std::endl;
+            break;
+        }
+    }
 }
+
 
 Scene* SceneManager::GetActiveScene() const
 {
@@ -40,6 +48,8 @@ Scene* SceneManager::GetActiveScene() const
 
 Entity* SceneManager::FindEntityById(int id)
 {
+    if (activeScene) {
+        return activeScene->FindEntityById(id);
+    }
     return nullptr;
 }
-
