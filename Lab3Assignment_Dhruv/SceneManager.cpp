@@ -1,5 +1,7 @@
 #include "SceneManager.h"
 
+//added possible loading logic based on what I thought would be right rather than leaving it blank
+
 void SceneManager::Initialize()
 {
 }

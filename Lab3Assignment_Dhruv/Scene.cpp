@@ -1,5 +1,6 @@
 #include "Scene.h"
 
+//added some loading logic for possible scenes according to what I thought would be correct rather than having it blank.
 Scene::Scene() : id(0)
 {
 }
